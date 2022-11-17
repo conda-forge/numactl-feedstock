@@ -6,5 +6,4 @@ set -eu
     --enable-shared=yes
 
 make
-make check
-
+make check || { cat ./test-suite.log && false; }
