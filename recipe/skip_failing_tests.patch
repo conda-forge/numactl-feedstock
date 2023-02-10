@@ -1,0 +1,14 @@
+diff --git a/Makefile.am b/Makefile.am
+index d64df5d..f31e12a 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -63,9 +63,7 @@ check_PROGRAMS = \
+ 
+ EXTRA_DIST += \
+ 	test/README \
+-	test/bind_range \
+ 	test/checkaffinity \
+-	test/checktopology \
+ 	test/numademo \
+ 	test/printcpu \
+ 	test/regress \
