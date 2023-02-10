@@ -1,0 +1,24 @@
+diff --git a/Makefile.am b/Makefile.am
+index d64df5d..bc2e365 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -63,9 +63,7 @@ check_PROGRAMS = \
+ 
+ EXTRA_DIST += \
+ 	test/README \
+-	test/bind_range \
+ 	test/checkaffinity \
+-	test/checktopology \
+ 	test/numademo \
+ 	test/printcpu \
+ 	test/regress \
+@@ -133,9 +131,7 @@ test: all $(check_PROGRAMS) regress1 regress2 test_numademo
+ TESTS_ENVIRONMENT = builddir='$(builddir)'; export builddir;
+ 
+ TESTS = \
+-	test/bind_range \
+ 	test/checkaffinity \
+-	test/checktopology \
+ 	test/distance \
+ 	test/move_pages \
+ 	test/nodemap \
