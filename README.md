@@ -1,11 +1,15 @@
+About numactl-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/numactl-feedstock/blob/main/LICENSE.txt)
+
+
 About numactl
-=============
+-------------
 
 Home: https://github.com/numactl/numactl
 
 Package license: LGPL-2.1-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/numactl-feedstock/blob/main/LICENSE.txt)
 
 Summary: NUMA support for Linux
 
@@ -17,6 +21,13 @@ Simple NUMA policy support. It consists of a numactl program to run other
 programs with a specific NUMA policy and a libnuma shared library
 ("NUMA API") to set NUMA policy in applications.
 
+
+About numactl
+-------------
+
+
+
+Package license: GPL-2.0-only
 
 Current build status
 ====================
