@@ -1,4 +1,4 @@
-{% set version = "2.0.16" %}
+{% set version = "2.0.18" %}
 
 package:
   name: libnuma
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/numactl/numactl/releases/download/v{{ version }}/numactl-{{ version }}.tar.gz
-  sha256: 1b242f893af977a1d31af6ce9d6b8dafdd2d8ec3dc9207f7c2dc0d3446e7c7c8
+  sha256: b4fc0956317680579992d7815bc43d0538960dc73aa1dd8ca7e3806e30bc1274
   patches:
     # jakirkham found that these tests failed of aarch and ppc64le
     # https://github.com/conda-forge/numactl-feedstock/pull/1#issuecomment-1425000697
@@ -15,7 +15,7 @@ source:
     - skip_failing_tests.patch  # [aarch64 or ppc64le]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('libnuma', max_pin='x') }}
