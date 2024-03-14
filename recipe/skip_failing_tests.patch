@@ -1,5 +1,5 @@
 diff --git a/Makefile.am b/Makefile.am
-index e84b21e..b0248e7 100644
+index da01d27..a68c7a6 100644
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -61,10 +61,7 @@ check_PROGRAMS = \
