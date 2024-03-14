@@ -5,5 +5,5 @@ set -eu
     --enable-static=no \
     --enable-shared=yes
 
-make
+make V=1
 make check || { cat ./test-suite.log && false; }
