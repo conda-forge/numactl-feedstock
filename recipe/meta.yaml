@@ -12,7 +12,7 @@ source:
     # https://github.com/conda-forge/numactl-feedstock/pull/1#issuecomment-1425000697
     # https://github.com/numactl/numactl/issues/163
     # https://github.com/numactl/numactl/issues/164
-    - skip_failing_tests.patch  # [aarch64 or ppc64le]
+    # - skip_failing_tests.patch  # [aarch64 or ppc64le]
 
 build:
   number: 0
