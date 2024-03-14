@@ -68,4 +68,5 @@ about:
 extra:
   feedstock-name: numactl
   recipe-maintainers:
+    - kkraus14
     - chrisburr

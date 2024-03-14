@@ -1,3 +1,3 @@
 set -eu
 
-make install-libLTLIBRARIES install-includeHEADERS
+make install-libLTLIBRARIES install-includeHEADERS install-pkgconfigDATA
