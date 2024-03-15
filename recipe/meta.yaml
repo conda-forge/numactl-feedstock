@@ -13,6 +13,7 @@ source:
     # https://github.com/numactl/numactl/issues/163
     # https://github.com/numactl/numactl/issues/164
     - skip_failing_tests.patch  # [aarch64 or ppc64le]
+    - fix_ppc64le_set_mempolicy_home_node.patch  # [ppc64le]
 
 build:
   number: 0
@@ -26,7 +27,7 @@ requirements:
     - autoconf  # [aarch64 or ppc64le]
     - libtool   # [aarch64 or ppc64le]
     - {{ compiler('c') }}
-    - make 
+    - make
 
 test:
   commands:
