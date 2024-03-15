@@ -24,8 +24,9 @@ requirements:
   build:
     - automake  # [aarch64 or ppc64le]
     - autoconf  # [aarch64 or ppc64le]
+    - libtool   # [aarch64 or ppc64le]
     - {{ compiler('c') }}
-    - make
+    - make 
 
 test:
   commands:
