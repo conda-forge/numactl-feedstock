@@ -16,28 +16,42 @@ source:
     - fix_ppc64le_set_mempolicy_home_node.patch  # [ppc64le]
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not linux]
 
 requirements:
   build:
-    - automake  # [aarch64 or ppc64le]
-    - autoconf  # [aarch64 or ppc64le]
-    - libtool   # [aarch64 or ppc64le]
+    - automake
+    - autoconf
+    - coreutils
+    - grep
+    - libtool
+    - sed
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-
-test:
-  commands:
-    - test -f $PREFIX/lib/libnuma.so
-    - test ! -f $PREFIX/lib/libnuma.a
 
 outputs:
   - name: libnuma
     run_exports:
       - {{ pin_subpackage('libnuma', max_pin='x') }}
     script: install-libnuma.sh
+    requirements:
+      build:
+        - automake
+        - autoconf
+        - coreutils
+        - grep
+        - libtool
+        - sed
+        - {{ compiler('c') }}
+        - {{ stdlib('c') }}
+        - make
+    test:
+      commands:
+        - test -f $PREFIX/lib/libnuma.so
+        - test ! -f $PREFIX/lib/libnuma.a
+        - test -f $PREFIX/lib/pkgconfig/numa.pc
 
   - name: numactl
     run_exports:
@@ -45,6 +59,12 @@ outputs:
     script: install-numactl.sh
     requirements:
       build:
+        - automake
+        - autoconf
+        - coreutils
+        - grep
+        - libtool
+        - sed
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
         - make
