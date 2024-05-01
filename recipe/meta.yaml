@@ -24,7 +24,10 @@ requirements:
     - automake
     - autoconf
     - coreutils
+    - file
+    - grep
     - libtool
+    - sed
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
@@ -39,7 +42,10 @@ outputs:
         - automake
         - autoconf
         - coreutils
+        - file
+        - grep
         - libtool
+        - sed
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
         - make
@@ -58,7 +64,10 @@ outputs:
         - automake
         - autoconf
         - coreutils
+        - file
+        - grep
         - libtool
+        - sed
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
         - make
