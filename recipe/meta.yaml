@@ -25,6 +25,7 @@ requirements:
     - autoconf  # [aarch64 or ppc64le]
     - libtool   # [aarch64 or ppc64le]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - make
 
 test:
@@ -34,6 +35,8 @@ test:
 
 outputs:
   - name: libnuma
+    run_exports:
+      - {{ pin_subpackage('libnuma', max_pin='x') }}
     script: install-libnuma.sh
 
   - name: numactl
@@ -43,7 +46,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
-        - {{ stdlib("c") }}
+        - {{ stdlib('c') }}
         - make
       host:
         - libnuma
