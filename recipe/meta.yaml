@@ -43,6 +43,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - make
       host:
         - libnuma
