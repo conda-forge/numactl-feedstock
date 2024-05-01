@@ -23,6 +23,7 @@ requirements:
   build:
     - automake
     - autoconf
+    - coreutils
     - libtool
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
@@ -37,6 +38,7 @@ outputs:
       build:
         - automake
         - autoconf
+        - coreutils
         - libtool
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
@@ -55,6 +57,7 @@ outputs:
       build:
         - automake
         - autoconf
+        - coreutils
         - libtool
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
