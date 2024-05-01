@@ -35,8 +35,12 @@ outputs:
     script: install-libnuma.sh
     requirements:
       build:
+        - automake
+        - autoconf
+        - libtool
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
+        - make
     test:
       commands:
         - test -f $PREFIX/lib/libnuma.so
@@ -49,8 +53,12 @@ outputs:
     script: install-numactl.sh
     requirements:
       build:
+        - automake
+        - autoconf
+        - libtool
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
+        - make
       host:
         - libnuma
       run:
