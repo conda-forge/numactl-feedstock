@@ -24,7 +24,6 @@ requirements:
     - automake
     - autoconf
     - coreutils
-    - file
     - grep
     - libtool
     - sed
@@ -42,7 +41,6 @@ outputs:
         - automake
         - autoconf
         - coreutils
-        - file
         - grep
         - libtool
         - sed
@@ -64,7 +62,6 @@ outputs:
         - automake
         - autoconf
         - coreutils
-        - file
         - grep
         - libtool
         - sed
