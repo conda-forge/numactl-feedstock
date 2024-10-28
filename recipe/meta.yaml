@@ -19,18 +19,6 @@ build:
   number: 3
   skip: true  # [not linux]
 
-requirements:
-  build:
-    - automake
-    - autoconf
-    - coreutils
-    - grep
-    - libtool
-    - sed
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
-    - make
-
 outputs:
   - name: libnuma
     build:
@@ -71,7 +59,7 @@ outputs:
         - {{ stdlib('c') }}
         - make
       host:
-        - libnuma
+        - {{ pin_subpackage('libnuma', exact=True) }}
       run:
         - {{ pin_subpackage('libnuma', exact=True) }}
     test:
