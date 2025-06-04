@@ -1,5 +1,7 @@
 set -eu
 
+./autogen.sh
+
 ./configure \
     --prefix="$PREFIX" \
     --enable-static=no \
