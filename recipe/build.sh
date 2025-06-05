@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-./autogen.sh
+autoreconf --install --symlink
 
 ./configure \
     --prefix="$PREFIX" \
