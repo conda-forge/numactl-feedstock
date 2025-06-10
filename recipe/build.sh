@@ -1,4 +1,7 @@
+#!/bin/bash
 set -eu
+
+autoreconf --install --symlink
 
 ./configure \
     --prefix="$PREFIX" \
