@@ -1,7 +1,7 @@
 {% set version = "2.0.18" %}
 
 package:
-  name: libnuma
+  name: libnuma-split
   version: {{ version }}
 
 source:
@@ -16,7 +16,7 @@ source:
     - fix_ppc64le_set_mempolicy_home_node.patch  # [ppc64le]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [not linux]
 
 requirements:
@@ -33,9 +33,10 @@ requirements:
 
 outputs:
   - name: libnuma
-    run_exports:
-      - {{ pin_subpackage('libnuma', max_pin='x') }}
     script: install-libnuma.sh
+    build:
+      run_exports:
+        - {{ pin_subpackage('libnuma', max_pin='x') }}
     requirements:
       build:
         - automake
@@ -54,8 +55,9 @@ outputs:
         - test -f $PREFIX/lib/pkgconfig/numa.pc
 
   - name: numactl
-    run_exports:
-      - {{ pin_subpackage('libnuma', max_pin='x') }}
+    build:
+      run_exports:
+        - {{ pin_subpackage('libnuma', max_pin='x') }}
     script: install-numactl.sh
     requirements:
       build:
@@ -74,7 +76,7 @@ outputs:
         - {{ pin_subpackage('libnuma', exact=True) }}
     test:
       commands:
-        - numactl --show
+        - numactl --show  # [not aarch64 and not ppc64le]
     about:
       license: GPL-2.0-only
       license_file: LICENSE.GPL2
