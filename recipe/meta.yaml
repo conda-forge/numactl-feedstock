@@ -76,7 +76,7 @@ outputs:
         - {{ pin_subpackage('libnuma', exact=True) }}
     test:
       commands:
-        - numactl --show
+        - numactl --show  # [not aarch64 and not ppc64le]
     about:
       license: GPL-2.0-only
       license_file: LICENSE.GPL2
