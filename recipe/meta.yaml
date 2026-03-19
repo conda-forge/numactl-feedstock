@@ -27,6 +27,7 @@ requirements:
     - grep
     - libtool
     - sed
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
