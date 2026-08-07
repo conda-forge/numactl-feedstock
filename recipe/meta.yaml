@@ -8,11 +8,11 @@ source:
   url: https://github.com/numactl/numactl/releases/download/v{{ version }}/numactl-{{ version }}.tar.gz
   sha256: b4fc0956317680579992d7815bc43d0538960dc73aa1dd8ca7e3806e30bc1274
   patches:
-    # jakirkham found that these tests failed of aarch and ppc64le
+    # These tests require NUMA topology that is unavailable in some CI environments.
     # https://github.com/conda-forge/numactl-feedstock/pull/1#issuecomment-1425000697
     # https://github.com/numactl/numactl/issues/163
     # https://github.com/numactl/numactl/issues/164
-    - skip_failing_tests.patch  # [aarch64 or ppc64le]
+    - skip_failing_tests.patch  # [aarch64 or ppc64le or riscv64]
     - fix_ppc64le_set_mempolicy_home_node.patch  # [ppc64le]
 
 build:
@@ -77,7 +77,7 @@ outputs:
         - {{ pin_subpackage('libnuma', exact=True) }}
     test:
       commands:
-        - numactl --show  # [not aarch64 and not ppc64le]
+        - numactl --show  # [not aarch64 and not ppc64le and not riscv64]
     about:
       license: GPL-2.0-only
       license_file: LICENSE.GPL2
